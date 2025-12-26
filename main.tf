@@ -48,8 +48,9 @@ resource "aws_route_table_association" "public_assoc" {
 
 #Create security group with firewall rules
 resource "aws_security_group" "jenkins-sg-2022" {
-  name        = var.security_group
+  name        = "jenkins-sgroup-dec-2021"
   description = "security group for Ec2 instance"
+  vpc_id      = aws_vpc.main.id
 
   ingress {
     from_port   = 8080
